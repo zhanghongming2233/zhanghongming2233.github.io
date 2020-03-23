@@ -11,6 +11,12 @@
 <h1 id="微分器"><a href="#微分器" class="headerlink" title="微分器"></a>微分器</h1><p><img src="https://pic.downk.cc/item/5e78311c5c5609112958b398.jpg" alt="5"><br>$$<br>V_{out}=-RC\frac{d}{dt}V_{in}<br>$$</p>
 <h1 id="积分器"><a href="#积分器" class="headerlink" title="积分器"></a>积分器</h1><p><img src="https://pic.downk.cc/item/5e7831325c5609112958c724.jpg" alt="6"><br>$$<br>V_{out}=-\frac{1}{RC}\int V_{in}dt<br>$$</p>
 ]]></content>
+      <categories>
+        <category>电路基础</category>
+      </categories>
+      <tags>
+        <tag>放大器</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
