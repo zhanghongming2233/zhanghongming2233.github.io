@@ -4,20 +4,26 @@
     <title>跨导放大器</title>
     <url>/2020/03/24/%E8%B7%A8%E5%AF%BC%E6%94%BE%E5%A4%A7%E5%99%A8/</url>
     <content><![CDATA[<ul>
-<li>电压型运算放大器</li>
-<li>跨阻型运算放大器</li>
-<li>跨导运算放大器<h1 id="跨导放大器（OTA）"><a href="#跨导放大器（OTA）" class="headerlink" title="跨导放大器（OTA）"></a>跨导放大器（OTA）</h1></li>
-<li>一种电流型器件，输入信号为电压，输出信号为电流。<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2></li>
+<li><p>电压型运算放大器</p>
+</li>
+<li><p>跨阻型运算放大器</p>
+</li>
+<li><p>跨导运算放大器</p>
+<h1 id="跨导放大器（OTA）"><a href="#跨导放大器（OTA）" class="headerlink" title="跨导放大器（OTA）"></a>跨导放大器（OTA）</h1></li>
+<li><p>一种电流型器件，输入信号为电压，输出信号为电流。</p>
+</li>
 </ul>
-<ol>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ol>
 <li>在两种以上的模拟系统中进行数字信号分析与处理，这其中包括了线性系统和非线性系统；</li>
-<li>从电压信号与电流信号二者的处理系统入手，以该系统作为电路的接口，通过把输入电压信号实现向电流信号的一个转变，再把得到的电流信号放到电流模式下的系统来分析。<h2 id="相对于电压放大器特点"><a href="#相对于电压放大器特点" class="headerlink" title="相对于电压放大器特点"></a>相对于电压放大器特点</h2></li>
+<li>从电压信号与电流信号二者的处理系统入手，以该系统作为电路的接口，通过把输入电压信号实现向电流信号的一个转变，再把得到的电流信号放到电流模式下的系统来分析。</li>
+</ol>
+<h2 id="相对于电压放大器特点"><a href="#相对于电压放大器特点" class="headerlink" title="相对于电压放大器特点"></a>相对于电压放大器特点</h2><ol>
 <li>跨导运算放大器的放大效果较之电压型放大器更为温和； </li>
 <li>跨导运算放大器的内部结构比电压型放大器更为简洁；</li>
 <li>跨导运算放大器的通频带远大于电压型运算放大器；</li>
-<li>跨导运算放大器的增益与输入级驱动管的$g_m$值成正比，而$g_m$值又与其偏置电流值成正比；<h2 id="OTA实现的基本电路"><a href="#OTA实现的基本电路" class="headerlink" title="OTA实现的基本电路"></a>OTA实现的基本电路</h2><h3 id="浮地仿真电阻"><a href="#浮地仿真电阻" class="headerlink" title="浮地仿真电阻"></a>浮地仿真电阻</h3></li>
+<li>跨导运算放大器的增益与输入级驱动管的$g_m$值成正比，而$g_m$值又与其偏置电流值成正比；</li>
 </ol>
-<ul>
+<h2 id="OTA实现的基本电路"><a href="#OTA实现的基本电路" class="headerlink" title="OTA实现的基本电路"></a>OTA实现的基本电路</h2><h3 id="浮地仿真电阻"><a href="#浮地仿真电阻" class="headerlink" title="浮地仿真电阻"></a>浮地仿真电阻</h3><ul>
 <li>电路图：</li>
 </ul>
 <p><img src="https://pic.downk.cc/item/5e79f5279dbe9d88c5fdf351.png" alt=""></p>
