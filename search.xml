@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>跨导放大器</title>
+    <url>/2020/03/24/%E8%B7%A8%E5%AF%BC%E6%94%BE%E5%A4%A7%E5%99%A8/</url>
+    <content><![CDATA[<ul>
+<li>电压型运算放大器</li>
+<li>跨阻型运算放大器</li>
+<li>跨导运算放大器<h1 id="跨导放大器（OTA）"><a href="#跨导放大器（OTA）" class="headerlink" title="跨导放大器（OTA）"></a>跨导放大器（OTA）</h1></li>
+<li>一种电流型器件，输入信号为电压，输出信号为电流。<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2></li>
+</ul>
+<ol>
+<li>在两种以上的模拟系统中进行数字信号分析与处理，这其中包括了线性系统和非线性系统；</li>
+<li>从电压信号与电流信号二者的处理系统入手，以该系统作为电路的接口，通过把输入电压信号实现向电流信号的一个转变，再把得到的电流信号放到电流模式下的系统来分析。<h2 id="相对于电压放大器特点"><a href="#相对于电压放大器特点" class="headerlink" title="相对于电压放大器特点"></a>相对于电压放大器特点</h2></li>
+<li>跨导运算放大器的放大效果较之电压型放大器更为温和； </li>
+<li>跨导运算放大器的内部结构比电压型放大器更为简洁；</li>
+<li>跨导运算放大器的通频带远大于电压型运算放大器；</li>
+<li>跨导运算放大器的增益与输入级驱动管的$g_m$值成正比，而$g_m$值又与其偏置电流值成正比；<h2 id="OTA实现的基本电路"><a href="#OTA实现的基本电路" class="headerlink" title="OTA实现的基本电路"></a>OTA实现的基本电路</h2><h3 id="浮地仿真电阻"><a href="#浮地仿真电阻" class="headerlink" title="浮地仿真电阻"></a>浮地仿真电阻</h3></li>
+</ol>
+<ul>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f5279dbe9d88c5fdf351.png" alt=""></p>
+<ul>
+<li>传输函数：<br>$$<br>R=\frac{1}{g_m}(g_{m1}=g_{m2}=g_{m})<br>$$<h3 id="电压放大器"><a href="#电压放大器" class="headerlink" title="电压放大器"></a>电压放大器</h3></li>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f5589dbe9d88c5fe1592.png" alt=""></p>
+<ul>
+<li>传输函数：<br>$$<br>V_0=-g_mV_iR_L<br>$$<h3 id="同相电压积分器"><a href="#同相电压积分器" class="headerlink" title="同相电压积分器"></a>同相电压积分器</h3></li>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f57f9dbe9d88c5fe2bdd.png" alt=""></p>
+<ul>
+<li>传输函数<br>$$<br>\frac{V_0(s)}{V_i(s)}=\frac{g_m}{sC}<br>$$<h3 id="同相电流积分器"><a href="#同相电流积分器" class="headerlink" title="同相电流积分器"></a>同相电流积分器</h3></li>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f57f9dbe9d88c5fe2bdd.png" alt=""></p>
+<ul>
+<li>传输函数<br>$$<br>\frac{I_0(0)}{I_i(s)}=\frac{g_m}{sC}<br>$$<h3 id="有损电压积分器"><a href="#有损电压积分器" class="headerlink" title="有损电压积分器"></a>有损电压积分器</h3></li>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f5b29dbe9d88c5fe4b06.png" alt=""></p>
+<ul>
+<li>传输函数<br>$$<br>\frac{V_0(s)}{V_i(s)}=\frac{g_{m1}}{sC+g_{m2}}<br>$$<h3 id="浮地仿真电感"><a href="#浮地仿真电感" class="headerlink" title="浮地仿真电感"></a>浮地仿真电感</h3></li>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f5d09dbe9d88c5fe5d99.png" alt=""></p>
+<ul>
+<li>传输函数<br>$$<br>L_{eq}=\frac{C}{g_{m1}g_{m2}}<br>$$<h3 id="频变负电阻"><a href="#频变负电阻" class="headerlink" title="频变负电阻"></a>频变负电阻</h3></li>
+<li>电路图：</li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5e79f5e69dbe9d88c5fe6cf5.png" alt=""></p>
+<ul>
+<li>传输函数<br>$$<br>D=\frac{C_1C_2g_{m1}g_{m2}}{g_{m3}g_{m4}g_{m5}}<br>$$</li>
+</ul>
+]]></content>
+      <categories>
+        <category>电路基础</category>
+      </categories>
+      <tags>
+        <tag>放大器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用放大器</title>
     <url>/2020/03/23/%E5%B8%B8%E7%94%A8%E6%94%BE%E5%A4%A7%E5%99%A8/</url>
     <content><![CDATA[<h1 id="反向比例放大器"><a href="#反向比例放大器" class="headerlink" title="反向比例放大器"></a>反向比例放大器</h1><p><img src="https://pic.downk.cc/item/5e782fc45c560911295744a1.jpg" alt="1"></p>
