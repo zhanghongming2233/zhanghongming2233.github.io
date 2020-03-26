@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>混沌定义</title>
+    <url>/2020/03/26/chaos/</url>
+    <content><![CDATA[<h1 id="混沌的定义"><a href="#混沌的定义" class="headerlink" title="混沌的定义"></a>混沌的定义</h1><h2 id="Li-Yorke定义"><a href="#Li-Yorke定义" class="headerlink" title="Li-Yorke定义"></a>Li-Yorke定义</h2><p>设f(x)在区间[a,b]上有连续的自映射。如果f(x)有3周期点，则存在正整数n，使得f(x)有n周期点。<br>混沌的定义：在一个闭区间<em>I</em>，存在着连续自映射f(x)，而当f(x)满足下列前提的时候，那么他就存在混沌现象：</p>
+<ol>
+<li>f(x)周期点的周期无上界；</li>
+<li>闭区间I上存在不可数子集S，满足</li>
+</ol>
+<p>a. 对任意x,y$\in$s，当$x\neq y$时，则有$lim_{n\rightarrow\infty}sup|f^n(x)-f^n(y)|&gt;0$</p>
+<p>b. 对任意x,y$\in$s，,则有$lim_{n\rightarrow\infty} \inf|f^n(x)-f^n(y)|&gt;0$</p>
+<p>c. 对任意$x\in s和f(x)$的任意周期点y，则有：$lim_{n\rightarrow\infty}sup|f^n(x)-f^n(y)|&gt;0$</p>
+<h3 id="该定义体现的混沌特征"><a href="#该定义体现的混沌特征" class="headerlink" title="该定义体现的混沌特征"></a>该定义体现的混沌特征</h3><ol>
+<li>该混沌下存在着的稳定周期轨迹有无数个，但是可统计；</li>
+<li>该混沌系统下存在着的稳定的非周期轨迹有无穷个，而且是不可统计的；<h2 id="混沌系统的特征"><a href="#混沌系统的特征" class="headerlink" title="混沌系统的特征"></a>混沌系统的特征</h2></li>
+<li>初值敏感性</li>
+<li>运动有界性</li>
+<li>内在随机性</li>
+<li>系统遍历性</li>
+<li>系统分维性</li>
+<li>运动标度性</li>
+<li>混沌普适性</li>
+<li>统计特性<h2 id="混沌运动的判别方法"><a href="#混沌运动的判别方法" class="headerlink" title="混沌运动的判别方法"></a>混沌运动的判别方法</h2>定性分析：</li>
+<li>直接观察法</li>
+<li>分频采样法</li>
+<li>庞加莱截面法</li>
+</ol>
+<p>定量分析：</p>
+<ol>
+<li>相空间重构法</li>
+<li>关联维数法</li>
+<li>测度熵法</li>
+<li>李亚普洛夫指数法</li>
+</ol>
+]]></content>
+      <categories>
+        <category>非线性科学</category>
+      </categories>
+      <tags>
+        <tag>混沌</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>What Traveling on a Plane Does to Your Body</title>
     <url>/2020/03/25/Body/</url>
     <content><![CDATA[<h1 id="What-Traveling-on-a-Plane-Does-to-Your-Body"><a href="#What-Traveling-on-a-Plane-Does-to-Your-Body" class="headerlink" title="What Traveling on a Plane Does to Your Body"></a>What Traveling on a Plane Does to Your Body</h1><p>来源: <a href="https://www.livescience.com" target="_blank" rel="noopener">https://www.livescience.com</a></p>
