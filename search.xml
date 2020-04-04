@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML</title>
+    <url>/2020/04/04/HTML/</url>
+    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><ul>
+<li>HTML（Hypertext Markup Language）超文本标记语言。</li>
+<li>负责网页三要数之中的结构。</li>
+<li>HTML使用标签的形式来表示网页中的不同成分。</li>
+<li>所谓超文本指的是超链接，使用超链接可 以让我们从一个页面跳转到另一个页面。</li>
+</ul>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
+<li>HTML中的标记指的就是标签。 </li>
+<li>HTML使用标记标签来描述网页。 </li>
+<li>结构：<br>&lt;标签名&gt;标签内容&lt;/标签名&gt;<br>&lt;标签名 /&gt;</li>
+</ul>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
+<li><p>我们还将一个完整的标签称为元素。</p>
+</li>
+<li><p>这里我们可以将元素和标签认为是一个同义词。 </p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">  上边的h1我们就称为元素 </span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个<span class="tag">&lt;<span class="name">em</span>&gt;</span>段落<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line">  p也是一个元素，em是p的子元素，p是 em的父元素。</span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>body也是一个元素。</li>
+<li>body是p和em的祖先元素。 </li>
+<li>p和em是body的后代元素。</li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li>可以为HTML标签设置属性</li>
+<li>通过属性为HTML元素提供附加信息。</li>
+<li>属性需要设置在开始标签或自结束标签中。</li>
+<li>属性总是以名称/值对的形式出现。</li>
+<li>比如：name=“value</li>
+<li>有些属性可以是任意值，有些则必须是指定值。 </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">title</span>=<span class="string">"我是一个标题"</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常见属性"><a href="#常见属性" class="headerlink" title="常见属性"></a>常见属性</h3><ul>
+<li><p>id</p>
+<p>– id属性作为标签的唯一标识，在同一个网页中不能 出现相同的id属性值。 </p>
+</li>
+<li><p>class</p>
+<p>– class属性用来为标签分组，拥有相同class属性的 标签我们认为就是一组，可以出现相同的class属 性，可以为一个元素指定多个class。 </p>
+</li>
+<li><p>titl</p>
+<p>– title属性用来指定标签的标题，指定title以后，鼠 标移入到元素上方时，会出现提示文字。</p>
+</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li><p>HTML注释中的内容不会在网页中显示。 </p>
+</li>
+<li><p>格式: </p>
+<!-- 注释内容 --> 
+</li>
+<li><p>合理的使用注释可以帮助开发人员理解网 页的代码。</p>
+</li>
+<li><p>注释不能嵌套！</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Are Microwave Ovens Cooking the Environment?</title>
     <url>/2020/04/01/Microwa/</url>
     <content><![CDATA[<h1 id="Are-Microwave-Ovens-Cooking-the-Environment"><a href="#Are-Microwave-Ovens-Cooking-the-Environment" class="headerlink" title="Are Microwave Ovens Cooking the Environment?"></a>Are Microwave Ovens Cooking the Environment?</h1><p>来源: <a href="https://www.theguardian.com" target="_blank" rel="noopener">https://www.theguardian.com</a></p>
