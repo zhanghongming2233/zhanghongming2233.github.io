@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-04T05:24:58.826Z</updated>
+  <updated>2020-04-05T10:29:14.730Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gatsby</title>
+    <link href="http://yoursite.com/2020/04/05/Gatsby/"/>
+    <id>http://yoursite.com/2020/04/05/Gatsby/</id>
+    <published>2020-04-05T10:27:54.000Z</published>
+    <updated>2020-04-05T10:29:14.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;了不起的盖茨比&quot;&gt;&lt;a href=&quot;#了不起的盖茨比&quot; class=&quot;headerlink&quot; title=&quot;了不起的盖茨比&quot;&gt;&lt;/a&gt;了不起的盖茨比&lt;/h1&gt;&lt;h2 id=&quot;Before-reading&quot;&gt;&lt;a href=&quot;#Before-reading&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="英语阅读" scheme="http://yoursite.com/categories/%E8%8B%B1%E8%AF%AD%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="了不起的盖茨比" scheme="http://yoursite.com/tags/%E4%BA%86%E4%B8%8D%E8%B5%B7%E7%9A%84%E7%9B%96%E8%8C%A8%E6%AF%94/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML</title>
