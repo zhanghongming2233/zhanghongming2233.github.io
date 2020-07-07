@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>爬虫前奏</title>
+    <url>/2020/07/07/%E7%88%AC%E8%99%AB%E5%89%8D%E5%A5%8F/</url>
+    <content><![CDATA[<h1 id="网络爬虫前奏"><a href="#网络爬虫前奏" class="headerlink" title="网络爬虫前奏"></a>网络爬虫前奏</h1><h2 id="爬虫实际例子"><a href="#爬虫实际例子" class="headerlink" title="爬虫实际例子"></a>爬虫实际例子</h2><ol>
+<li>搜索引擎</li>
+<li>伯乐在线</li>
+<li>购物助手</li>
+<li>数据分析</li>
+<li>抢票软件</li>
+</ol>
+<h2 id="生么是网络爬虫"><a href="#生么是网络爬虫" class="headerlink" title="生么是网络爬虫"></a>生么是网络爬虫</h2><p>通俗理解：爬虫是一个模拟人类请求网站的行为。可以自动请求，并将数据抓取下来，然后使用一定的规则将有用的数据提取出来。</p>
+<h2 id="通用爬虫和聚焦爬虫"><a href="#通用爬虫和聚焦爬虫" class="headerlink" title="通用爬虫和聚焦爬虫"></a>通用爬虫和聚焦爬虫</h2><ol>
+<li>通用爬虫：没有目的性的爬虫。</li>
+<li>聚焦爬虫：面向特定需求的爬虫，只会爬取有用的类容。</li>
+</ol>
+<h2 id="python写爬虫的优点"><a href="#python写爬虫的优点" class="headerlink" title="python写爬虫的优点"></a>python写爬虫的优点</h2><ol>
+<li><p>性能比较好，支持多线程和异步。</p>
+</li>
+<li><p>语言简洁代码量小。</p>
+</li>
+<li><p>语言简单，学习成本小。</p>
+</li>
+<li><p>第三方包的支持，开发效率高。</p>
+</li>
+</ol>
+<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><ol>
+<li>python开发环境。</li>
+<li>文本编辑器。</li>
+<li>虚拟环境。</li>
+</ol>
+<h1 id="http协议和chrome抓包工具"><a href="#http协议和chrome抓包工具" class="headerlink" title="http协议和chrome抓包工具"></a>http协议和chrome抓包工具</h1><h2 id="什么是HTTP和HTTPS协议："><a href="#什么是HTTP和HTTPS协议：" class="headerlink" title="什么是HTTP和HTTPS协议："></a>什么是HTTP和HTTPS协议：</h2><p>HTTP协议：超文本传输协议，服务器端口 80</p>
+<p>HTTPS协议：是HTTP协议的加密版，增加SSL层，服务器端口 443</p>
+<h2 id="浏览器中一个http的请求过程"><a href="#浏览器中一个http的请求过程" class="headerlink" title="浏览器中一个http的请求过程"></a>浏览器中一个http的请求过程</h2><ol>
+<li>用户输入url，浏览器向服务器发送请求，请求主要分为Get和Post。</li>
+<li>浏览器发送一个Request请求去获取服务器上的html文件，服务器返回Response文件发送给浏览器</li>
+<li>浏览器分析Response中的html，对其中的引用的其他文件如：images、css、js等会再次向服务器发送Request请求来获取相关文件。</li>
+<li>文件获取成功，网页根据Html语法将完整内容显示出来。</li>
+</ol>
+<h2 id="url详解"><a href="#url详解" class="headerlink" title="url详解"></a>url详解</h2><p>url：Uniform Resource Locator的简写，统一资源定位符。</p>
+<p>url由以下部分组成：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">scheme://host:port/path?query-string=xxx#anchor</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>scheme：访问的协议，一般为http、https和ftp等。</li>
+<li>host：主机名、域名,比如<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></li>
+<li>port：端口号。默认80端口</li>
+<li>path：查找路径。</li>
+<li>query-string：查询字符串</li>
+<li>anchor：锚点，前端页面定位用</li>
+</ul>
+<p>在浏览器中对一个url请求，浏览器会对该url进行编码。处英文、数字和部分符号外，其他字符全部使用百分号+十六进制进行编码。</p>
+<h2 id="常用的请求方法"><a href="#常用的请求方法" class="headerlink" title="常用的请求方法"></a>常用的请求方法</h2><p>在http中定义了8种请求方法，主要学习其中两种。</p>
+<ol>
+<li>get请求：一般情况，只向服务器下载数据，不会对服务器资源产生影响。</li>
+<li>post请求：向服务器发送数据，上传文件等。</li>
+</ol>
+<p>一般情况下会遵循使用，但某些网站会采用反爬虫机制，不会按常理出牌，实际情况实际分析。</p>
+<h2 id="常见请求头参数"><a href="#常见请求头参数" class="headerlink" title="常见请求头参数"></a>常见请求头参数</h2><p>在http协议中，向服务器发送一个请求，数据分为三个部分。1，将数据放在url中。2，把数据放在body中（post请求中）。3，把数据放在head中。</p>
+<ol>
+<li><p>User-Agent：浏览器名称。</p>
+</li>
+<li><p>Referer：表明当前请求是从哪个url过来的。</p>
+</li>
+<li><p>cookie：http协议是无状态的，cookie被用来标识用户。</p>
+</li>
+</ol>
+<h2 id="常见响应状态码"><a href="#常见响应状态码" class="headerlink" title="常见响应状态码"></a>常见响应状态码</h2><ol>
+<li>200：请求正常，服务器返回正常数值。</li>
+<li>301：永久重定向，一个url永久的改变为另一个url。</li>
+<li>302：临时重定向，访问一个需要登陆的网页，跳转到登陆页面。</li>
+<li>400：url在服务器上找不到。</li>
+<li>403：服务器拒绝访问。</li>
+<li>500：服务器内部错误。</li>
+</ol>
+<h2 id="Chrome抓包"><a href="#Chrome抓包" class="headerlink" title="Chrome抓包"></a>Chrome抓包</h2><ol>
+<li>elements</li>
+<li>sources</li>
+<li>Network</li>
+</ol>
+]]></content>
+      <categories>
+        <category>pthon</category>
+      </categories>
+      <tags>
+        <tag>python爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown语法</title>
     <url>/2020/06/08/markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h2 id="支持的命令"><a href="#支持的命令" class="headerlink" title="支持的命令"></a>支持的命令</h2><p>[toc]</p>
