@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-07T01:32:36.441Z</updated>
+  <updated>2020-07-08T02:37:09.570Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过python自带库urllib爬虫</title>
+    <link href="http://yoursite.com/2020/07/08/%E9%80%9A%E8%BF%87python%E8%87%AA%E5%B8%A6%E5%BA%93urllib%E7%88%AC%E8%99%AB/"/>
+    <id>http://yoursite.com/2020/07/08/%E9%80%9A%E8%BF%87python%E8%87%AA%E5%B8%A6%E5%BA%93urllib%E7%88%AC%E8%99%AB/</id>
+    <published>2020-07-08T02:34:48.000Z</published>
+    <updated>2020-07-08T02:37:09.570Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;urllib库&quot;&gt;&lt;a href=&quot;#urllib库&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python爬虫" scheme="http://yoursite.com/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>爬虫前奏</title>

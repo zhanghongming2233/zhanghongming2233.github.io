@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>通过python自带库urllib爬虫</title>
+    <url>/2020/07/08/%E9%80%9A%E8%BF%87python%E8%87%AA%E5%B8%A6%E5%BA%93urllib%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<h1 id="urllib库"><a href="#urllib库" class="headerlink" title="urllib库"></a>urllib库</h1><p>urllib库是python中一个基本的网络请求库。可以模拟浏览器的行为，向指定服务器发送请求，并保存服务器返回数据。</p>
+<h2 id="urlopen函数"><a href="#urlopen函数" class="headerlink" title="urlopen函数"></a>urlopen函数</h2><p>在python3中urlib库中，所有和网络请求相关的方法，都集成到urlib.request模块下。最基本使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line">resp = request.urlopen(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">print(resp.read())</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>url：请求的url。</p>
+</li>
+<li><p>date：请求的date，如果设置了这个值，将会变为post请求。</p>
+</li>
+<li><p>返回值：返回值是一个http.cilent.httpresponse对象，是一个类文件句柄对象。</p>
+<p>参数有read(size)、readline()、readlines()、getcode()、info()、geturl()等。</p>
+</li>
+</ol>
+<h2 id="urlretrieve函数"><a href="#urlretrieve函数" class="headerlink" title="urlretrieve函数"></a>urlretrieve函数</h2><p>这个函数可以方便的将网页上的一个文件保存到本地，例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line">request.urlretrieve(<span class="string">'http://www.baidu.com'</span>,<span class="string">'baidu.html'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="urlencode函数"><a href="#urlencode函数" class="headerlink" title="urlencode函数"></a>urlencode函数</h2><p>用浏览器发送请求的时候，如果url中包含中文或其他特殊字符，浏览器会自动编码，使用代码发送请求就需要手动编码，urlencode就是将字典数据转化url编码后的数据。示例如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line">data = &#123;<span class="string">'name'</span>:<span class="string">'张三'</span>,</span><br><span class="line">        <span class="string">'age'</span>:<span class="number">16</span>,</span><br><span class="line">        <span class="string">'greet'</span>:<span class="string">'hello world'</span></span><br><span class="line">       &#125;</span><br><span class="line">result = parse.urlencode(data)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<h2 id="parse-qs函数"><a href="#parse-qs函数" class="headerlink" title="parse_qs函数"></a>parse_qs函数</h2><p>可以将经过编码后的url参数进行解码。示例如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line">data = &#123;<span class="string">'name'</span>:<span class="string">'张三'</span>,<span class="string">'age'</span>:<span class="number">16</span>,<span class="string">'greet'</span>:<span class="string">'hello world'</span>&#125;</span><br><span class="line">result = parse.urlencode(data)</span><br><span class="line">print(result)</span><br><span class="line">ps = parse.parse_qs(result)</span><br><span class="line">printf(ps)</span><br></pre></td></tr></table></figure>
+
+<h2 id="urlparse和urlsplit"><a href="#urlparse和urlsplit" class="headerlink" title="urlparse和urlsplit"></a>urlparse和urlsplit</h2><p>对url的组成部分进行分割</p>
+<p>urlparse比urlspllit多一个params属性，其他完全一样。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line">url = <span class="string">'https://cn.bing.com/search?q=python+%e5%ad%97%e5%85%b8&amp;qs=SC&amp;pq=pythonz&amp;sk=SC1&amp;sc=8-7&amp;cvid=620932CD2C504DF7800954A113E362F7&amp;FORM=QBLH&amp;sp=2'</span></span><br><span class="line">result1 = parse.urlparse(url)</span><br><span class="line">result2 = parse.urlsplit(url)</span><br><span class="line">print(result1)</span><br><span class="line">print(result2)</span><br></pre></td></tr></table></figure>
+
+<h2 id="request-Request类"><a href="#request-Request类" class="headerlink" title="request.Request类"></a>request.Request类</h2><p>如果想在请求的时候增加一个请求头，就必须使用request.Request来实现比如增加user-agent</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 Edg/83.0.478.45'</span>&#125;</span><br><span class="line">req = request.Request(<span class="string">"http://www.baidu.com"</span>,headers=headers)</span><br><span class="line">resp = request.urlopen(req)</span><br><span class="line">print(resp.read())</span><br></pre></td></tr></table></figure>
+
+<h2 id="爬虫实战（拉勾网）"><a href="#爬虫实战（拉勾网）" class="headerlink" title="爬虫实战（拉勾网）"></a>爬虫实战（拉勾网）</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://www.lagou.com/jobs/positionAjax.json?'</span></span><br><span class="line"><span class="comment">#headers是字典结构</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 Edg/83.0.478.45'</span>,</span><br><span class="line">    <span class="string">'Referer'</span>:<span class="string">'https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput='</span></span><br><span class="line">&#125;</span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">'first'</span>:<span class="string">'true'</span>,</span><br><span class="line">    <span class="string">'pn'</span>:<span class="number">1</span>,</span><br><span class="line">    <span class="string">'kd'</span>:<span class="string">'pythhon'</span></span><br><span class="line">&#125;</span><br><span class="line">req = request.Request(url,headers=headers,data=parse.urlencode(data).encode(<span class="string">'utf-8'</span>),method=<span class="string">'POST'</span>)</span><br><span class="line">resp = request.urlopen(req)</span><br><span class="line">print(resp.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ProxHandler处理器（代理设置）"><a href="#ProxHandler处理器（代理设置）" class="headerlink" title="ProxHandler处理器（代理设置）"></a>ProxHandler处理器（代理设置）</h2><p>很多网站会检测某一段时间某个IP的访问次数，访问次数不正常就会限制改IP的访问请求。</p>
+<ol>
+<li><p>代理的原理：在请求目的服务器之前，先请求代理服务器，然后代理服务器去请求目的服务器，代理服务器获取到网站数据后，将数据转发给本地。</p>
+</li>
+<li><p><a href="http://httpbin.org" target="_blank" rel="noopener">http://httpbin.org</a> 这个网站可以方便的查看http请求的一些参数。</p>
+</li>
+<li><p>在代码中使用代理：</p>
+<ul>
+<li>使用<code>urllib.request.ProxHandler</code>，传入一个代理，这个代理是一个字典，字典的key依赖于代理服务器能够接受的类型，一般是<code>http</code>或者<code>https</code>，值是<code>ip:port</code></li>
+<li>使用上一步创建的<code>handler</code>,利用<code>request.bulid_opener</code>创建一个<code>opener</code></li>
+<li>使用上一步创建的<code>opener</code>,调用<code>open</code>函数，发起请求。</li>
+</ul>
+</li>
+</ol>
+<p>实例代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line">url = <span class="string">'http://httpbin.org/ip'</span></span><br><span class="line"><span class="comment">#1，使用ProxyHandler，传入代理设置构建一个handler</span></span><br><span class="line">handler = request.ProxyHandler(&#123;<span class="string">'http'</span>:<span class="string">'223.247.94.184:4216'</span>&#125;)</span><br><span class="line"><span class="comment">#2，使用handler构建一个opener</span></span><br><span class="line">opener = request.build_opener(handler)</span><br><span class="line"><span class="comment">#3，使用opener发送一个请求</span></span><br><span class="line">resp = opener.open(url)</span><br><span class="line">print(resp.read())</span><br></pre></td></tr></table></figure>
+
+<p>常用代理供应商：</p>
+<ul>
+<li>西刺免费代理ip：<a href="http://www.xicidaili.com/" target="_blank" rel="noopener">http://www.xicidaili.com/</a></li>
+<li>快代理：<a href="http://www.kuaidaili.com/" target="_blank" rel="noopener">http://www.kuaidaili.com/</a></li>
+<li>代理云：<a href="http://www.dailiyun.com/" target="_blank" rel="noopener">http://www.dailiyun.com/</a></li>
+</ul>
+<h2 id="cookie原理和格式"><a href="#cookie原理和格式" class="headerlink" title="cookie原理和格式"></a>cookie原理和格式</h2><h3 id="什么是cookie"><a href="#什么是cookie" class="headerlink" title="什么是cookie"></a>什么是cookie</h3><p>在网站中，HTTP是无状态的，也就是说第一次与服务器连接并登陆成功，第二次请求服务依然不能确定当前用户是谁。cookie就是为了解决这个问题而存在的，第一次登陆后服务器会返回一些数据（cookie）给浏览器，然后浏览器会见这些信息存储在本地，当用会再次相同一个服务器发送请求时浏览器会自动将对应服务器的cookie发送给服务器，服务器通过返回的cookie来判断当前请求用户时谁。cookie数据存储量有限，不同的浏览器可能会有不同的大小，但一般不超过4KB，因此使用cookie只能存储一些小量数据。</p>
+<h3 id="cookie的格式"><a href="#cookie的格式" class="headerlink" title="cookie的格式"></a>cookie的格式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Set－Cookie: NAME&#x3D;VALUE；Expires&#x3D;DATE；Path&#x3D;PATH；Domain&#x3D;DOMAIN_NAME；SECURE</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>NAME：cookies的名字。</li>
+<li>VALUE：cookie的值。</li>
+<li>Expires：cookie的过期时间。</li>
+<li>Path：cookie的作用路径。</li>
+<li>Domain：cookie作用的域名。</li>
+<li>SECURE：是否只在http协议下起作用。</li>
+</ul>
+<h2 id="cookie模拟登陆"><a href="#cookie模拟登陆" class="headerlink" title="cookie模拟登陆"></a>cookie模拟登陆</h2><h3 id="使用headers添加cookie信息"><a href="#使用headers添加cookie信息" class="headerlink" title="使用headers添加cookie信息"></a>使用headers添加cookie信息</h3><p>以人人网为例，在人人网中要访问某个主页，必须先登录才能访问。而登录就需要cookie信息。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line">renren_url = <span class="string">"http://www.renren.com/879935126/profile"</span></span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">"User_Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 Edg/83.0.478.45"</span>,</span><br><span class="line">    <span class="string">"Cookie"</span>:<span class="string">"anonymid=kbcwben2x6lf9f; depovince=ZGQT; jebecookies=17b7fc25-4bcc-41da-a55f-c7d22d02b0ce|||||; _r01_=1; JSESSIONID=abcMqXW7EfgY08W1PdRkx; ick_login=2d51f64a-260e-4ecb-9920-c3100087db88; taihe_bi_sdk_uid=1f5e066a205cf3428029ffd2288a16b0; taihe_bi_sdk_session=86ccdff6b6b5e485f9fb8aa01d673e93; ick=4867243e-bce5-426b-8ee5-4a4c8efbcc95; t=8393ae52ec61c030c4a5923a33c1f8d26; societyguester=8393ae52ec61c030c4a5923a33c1f8d26; id=879935126; xnsid=54f0e3d3; p=9f07f108f25ee717b2366bc19c04855a6; first_login_flag=1; ver=7.0; loginfrom=null; wp_fold=0; XNESSESSIONID=abcbXu-_G738vbBmaeRkx; __utma=151146938.1163273670.1592007854.1592007854.1592007854.1; __utmc=151146938; __utmz=151146938.1592007854.1.1.utmcsr=renren.com|utmccn=(referral)|utmcmd=referral|utmcct=/879935126/profile; __utmt=1; __utmb=151146938.1.10.1592007854; wp=0"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">req = request.Request(url=renren_url,headers=headers)</span><br><span class="line">resp = request.urlopen(req)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'return.html'</span>,<span class="string">'w'</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="comment">#write写入必须是str的数据类型</span></span><br><span class="line">    <span class="comment">#resp.read()读出来的是一个bytes的数据类型</span></span><br><span class="line">    fp.write(resp.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>这是最简单粗暴的方式，但很有效。</p>
+<h3 id="http-cookiejar模块："><a href="#http-cookiejar模块：" class="headerlink" title="http.cookiejar模块："></a>http.cookiejar模块：</h3><p>模块主要的类有CookieJar、FileCookieJar、MozillaCookieJar、LWPCookieJAr。四个类的作用分别如下：</p>
+<ol>
+<li>CookieJar()：管理http cookie的值，存储http请求过程中生成的cookie，向传出的http请求添加cookie的对象。整个cookie都存储在内存中，对CookieJar实例进行垃圾回收后cookie信息也将丢失。</li>
+<li>FileCookieJar(filename,delayload=None,policy=None)：从CookieJar派生而来，用来创建FileCookie实例，检索Cookie的值并将cookie存储在文件中，filename是存储cookie信息的文件名，delayload的值为True时支持文件延时访问，即只有在需要时才读取文件或存入数据。</li>
+<li>MozillaCookieJar(filename,delayload=None,policy=None)：从FileCookieJar派生而来，创建与Mozilla浏览器兼容的FilCookieJar实例。</li>
+<li>LWPCookieJar(filename,delayload=None,policy=None)：从cookiejar派生而来，创建与libwwwper标准的Set-Cookie3文件格式兼容的FileCookieJar实例。</li>
+</ol>
+<p>利用http.cookiejar和request.HTTPCookieProcessor登陆人人网，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> http.cookiejar <span class="keyword">import</span> CookieJar</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 Edg/83.0.478.45'</span></span><br><span class="line">&#125;</span><br><span class="line">login_url = <span class="string">'http://wwww.renren.com/PLogin.do'</span></span><br><span class="line">main_url = <span class="string">'http://www.renren.com/879935123/profile'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_opener</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#1. 登陆</span></span><br><span class="line">    <span class="comment">#1.1 创建一个cookiejar对象</span></span><br><span class="line">    cookiejar = CookieJar()</span><br><span class="line">    <span class="comment">#1.2 使用cookiejar创建一个HTTPCookieProcess对象</span></span><br><span class="line">    handler = request.HTTPCookieProcessor(cookiejar)</span><br><span class="line">    <span class="comment">#1.3 使用上一步的handler创建一个opener</span></span><br><span class="line">    opener = request.build_opener(handler)</span><br><span class="line">    <span class="keyword">return</span> opener</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login_renren</span> <span class="params">(opener)</span>:</span></span><br><span class="line">    <span class="comment">#1.4 使用opener发送登录的请求（人人网的邮箱和密码）</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">'email'</span>:<span class="string">'240709202@qq.com'</span>,</span><br><span class="line">        <span class="string">'password'</span>:<span class="string">'199771'</span></span><br><span class="line">    &#125;</span><br><span class="line">    req = request.Request(login_url,data=parse.urlencode(data).encode(<span class="string">'utf-8'</span>),headers=headers)</span><br><span class="line">    opener.open(req)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">visit_mainpage</span> <span class="params">(opener)</span>:</span></span><br><span class="line">    <span class="comment">#2. 访问主页</span></span><br><span class="line">    <span class="comment">#获取主页时不要新建一个opener而应该使用以前的的opener，以前的opener已经包含登陆所需的cookie信息。</span></span><br><span class="line">    req = request.Request(main_url,headers=headers)</span><br><span class="line">    resp = opener.open(req)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'return.html'</span>,<span class="string">'w'</span>,encoding= <span class="string">'utf-8'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(resp.read().decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    opener = get_opener()</span><br><span class="line">    login_renren(opener)</span><br><span class="line">    visit_mainpage(opener)</span><br></pre></td></tr></table></figure>
+
+<h3 id="cookie保存到本地"><a href="#cookie保存到本地" class="headerlink" title="cookie保存到本地"></a>cookie保存到本地</h3><p>保存cookie到本地，可以使用cookiejar的save方法，并需要指定一个文件：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http.cookiejar <span class="keyword">import</span> MozillaCookieJar</span><br><span class="line"></span><br><span class="line">cookiejar = MozillaCookieJar(<span class="string">'cookie.txt'</span>)</span><br><span class="line">handler = request.HTTPCookieProcessor(cookiejar)</span><br><span class="line">opener = request.build_opener(handler)</span><br><span class="line"></span><br><span class="line">resp = opener.open(<span class="string">"http://httpbin.org/cookies/set?course=adc"</span>)</span><br><span class="line"></span><br><span class="line">cookiejar.save(ignore_discard=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>将以保存的cookie加载：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http.cookiejar <span class="keyword">import</span> MozillaCookieJar</span><br><span class="line"></span><br><span class="line">cookiejar = MozillaCookieJar(<span class="string">'cookie.txt'</span>)</span><br><span class="line">cookiejar.load(ignore_discard=<span class="literal">True</span>)</span><br><span class="line">handler = request.HTTPCookieProcessor(cookiejar)</span><br><span class="line">opener = request.build_opener(handler)</span><br><span class="line"></span><br><span class="line">resp = opener.open(<span class="string">"http://httpbin.org/cookies"</span>)</span><br><span class="line"><span class="keyword">for</span> cookie <span class="keyword">in</span> cookiejar:</span><br><span class="line">    print(cookie)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬虫前奏</title>
     <url>/2020/07/07/%E7%88%AC%E8%99%AB%E5%89%8D%E5%A5%8F/</url>
     <content><![CDATA[<h1 id="网络爬虫前奏"><a href="#网络爬虫前奏" class="headerlink" title="网络爬虫前奏"></a>网络爬虫前奏</h1><h2 id="爬虫实际例子"><a href="#爬虫实际例子" class="headerlink" title="爬虫实际例子"></a>爬虫实际例子</h2><ol>
